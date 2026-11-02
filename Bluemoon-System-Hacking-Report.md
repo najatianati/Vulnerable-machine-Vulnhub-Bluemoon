@@ -55,7 +55,13 @@ The downloaded Bluemoon machine was provided in `.ova` format. An OVA (Open Virt
 
 The downloaded OVA file was required to import the Bluemoon virtual machine into Oracle VirtualBox. After downloading the file, it was ready for the importing process.
 
-**Figure 1: Downloading the Bluemoon (2021) Virtual Machine from VulnHub**
+<p align="center">
+  <img src="images/figure-1.png" alt="Bluemoon Virtual Machine">
+</p>
+
+<p align="center">
+  <em><strong>Figure 1: Downloading the Bluemoon (2021) Virtual Machine from VulnHub</strong></em>
+</p>
 
 ## 2.3 Importing Bluemoon into VirtualBox
 
