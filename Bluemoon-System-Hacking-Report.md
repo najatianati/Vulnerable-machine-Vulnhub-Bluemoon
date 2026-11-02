@@ -71,7 +71,13 @@ The import process was performed by selecting the downloaded OVA file through th
 
 Once the importing process was completed, the Bluemoon virtual machine appeared in the VirtualBox machine list. This allowed the target machine to be started and configured for the practical exercise.
 
-**Figure 2: Importing the Bluemoon Virtual Machine into Oracle VirtualBox**
+<p align="center">
+  <img src="images/Figure-2.png" alt="Bluemoon Virtual Machine">
+</p>
+
+<p align="center">
+  <em><strong>Figure 2: Importing the Bluemoon Virtual Machine into Oracle VirtualBox</strong></em>
+</p>
 
 ## 2.4 Preparing the Kali Linux Virtual Machine
 
@@ -87,7 +93,13 @@ Several tools available in Kali Linux were used throughout the practical exercis
 
 The Kali Linux virtual machine was started, and its terminal was opened to perform the required penetration testing commands. It was also prepared to communicate with the Bluemoon target machine through the Host-Only network.
 
-**Figure 3: Preparing the Kali Linux Virtual Machine**
+<p align="center">
+  <img src="images/Figure-3.png" alt="Bluemoon Virtual Machine">
+</p>
+
+<p align="center">
+  <em><strong>Figure 3: Preparing the Kali Linux Virtual Machine</strong></em>
+</p>
 
 
 # 3.0 Network Configuration
@@ -107,7 +119,15 @@ The Host-Only network configuration used in this practical exercise is shown in 
 
 This configuration ensured that both virtual machines were connected to the same network and could communicate with each other during the penetration testing activities.
 
-**Figure 4: Configuring the Host-Only Network Adapter**
+<p align="center">
+  <img src="images/Figure-4.png" alt="Bluemoon Virtual Machine">
+</p>
+<p align="center">
+  <img src="images/Figure-4-ii.png" alt="Bluemoon Virtual Machine">
+</p>
+<p align="center">
+  <em><strong>Figure 4: Configuring the Host-Only Network Adapter</strong></em>
+</p>
 
 ## 3.2 Connecting Kali Linux to the Host-Only Network
 
@@ -117,7 +137,12 @@ The network adapter was set to use the Host-Only Adapter and connected to `Virtu
 
 After starting Kali Linux, the terminal was opened to check its assigned IP address using the `ip addr` command. The result showed that Kali Linux had obtained the IP address `192.168.44.100`.
 
-**Figure 5: Verifying the Kali Linux IP Address**
+<p align="center">
+  <img src="images/Figure-5.png" alt="Bluemoon Virtual Machine">
+</p>
+<p align="center">
+  <em><strong>Figure 5: Verifying the Kali Linux IP Address</strong></em>
+</p>
 
 ## 3.3 Connecting Bluemoon to the Host-Only Network
 
@@ -127,7 +152,14 @@ Its network adapter was also configured to use `VirtualBox Host-Only Ethernet Ad
 
 After starting the Bluemoon virtual machine, its assigned IP address was checked. The result showed that Bluemoon had obtained the IP address `192.168.44.101` through DHCP.
 
-**Figure 6: Verifying the Bluemoon IP Address**
+
+<p align="center">
+  <img src="images/Figure-6.png" alt="Bluemoon Virtual Machine">
+</p>
+<p align="center">
+  <em><strong>Figure 6: Verifying the Bluemoon IP Address</strong></em>
+</p>
+
 
 ## 3.4 Verifying the Network Connection
 
@@ -144,7 +176,12 @@ The final network configuration is shown in the following table:
 
 This configuration allowed Kali Linux to communicate with the Bluemoon target machine. The Bluemoon IP address `192.168.44.101` was then used as the target address for the reconnaissance and scanning activities in the next stage of the practical exercise.
 
-**Figure 7: Verifying the Network Connection**
+<p align="center">
+  <img src="images/Figure-7.png" alt="Bluemoon Virtual Machine">
+</p>
+<p align="center">
+  <em><strong>Figure 7: Verifying the Network Connection</strong></em>
+</p>
 
 
 # 4.0 Reconnaissance and Information Gathering
@@ -175,7 +212,17 @@ FTP could potentially expose files or sensitive information, SSH could provide r
 
 Based on these findings, further investigation was carried out on each service to identify possible security weaknesses.
 
-**Figure 8: Identifying Open Ports and Services Using Nmap**
+<p align="center">
+  <img src="images/Figure-8.png" alt="Bluemoon Virtual Machine">
+</p>
+<p align="center">
+  <p align="center">
+  <img src="images/Figure-8-ii.png" alt="Bluemoon Virtual Machine">
+</p>
+<p align="center">
+  <em><strong>Figure 8: Identifying Open Ports and Services Using Nmap</strong></em>
+</p>
+
 
 ## 4.2 Investigating the HTTP Service
 
@@ -189,7 +236,13 @@ It also contained an image displaying the text **"THE GAME BEGINS"**.
 
 The homepage appeared to be a simple web page without any visible login forms or additional navigation links. However, the presence of the HTTP service indicated that further investigation of the website was necessary to identify any hidden information or accessible resources.
 
-**Figure 9: Accessing the Bluemoon Web Server**
+ <p align="center">
+  <img src="images/Figure-9.png" alt="Bluemoon Virtual Machine">
+</p>
+<p align="center">
+  <em><strong>Figure 9: Accessing the Bluemoon Web Serve</strong></em>
+</p>
+
 
 ## 4.3 Checking Website Information
 
@@ -206,7 +259,13 @@ The absence of these headers was recorded as a potential security configuration 
 
 The information collected was useful for understanding the web server configuration and identifying areas that could be improved.
 
-**Figure 10: Checking the Website Information and HTTP Response Headers**
+ <p align="center">
+  <img src="images/Figure-10.png" alt="Bluemoon Virtual Machine">
+</p>
+<p align="center">
+  <em><strong>Figure 10: Checking the Website Information and HTTP Response Headers</strong></em>
+</p>
+
 
 ## 4.4 Directory Enumeration Using Gobuster
 
@@ -218,7 +277,12 @@ The scan eventually discovered an interesting directory named `/hidden_text`. Th
 
 The discovery of this directory provided another area for investigation because it was not directly displayed on the website homepage.
 
-**Figure 11: Discovering Hidden Directories Using Gobuster**
+ <p align="center">
+  <img src="images/Figure-11.png" alt="Bluemoon Virtual Machine">
+</p>
+<p align="center">
+  <em><strong>Figure 11: Discovering Hidden Directories Using Gobuster</strong></em>
+</p>
 
 ## 4.5 Investigating the Hidden Directory
 
@@ -236,9 +300,19 @@ The QR code image was then accessed and downloaded for further investigation. It
 
 This finding showed that the hidden maintenance page contained additional information that was not immediately visible from the homepage.
 
-**Figure 12: Investigating the Hidden Maintenance Page**
+ <p align="center">
+  <img src="images/Figure-12.png" alt="Bluemoon Virtual Machine">
+</p>
+<p align="center">
+  <em><strong>Figure 12: Investigating the Hidden Maintenance Page</strong></em>
+</p>
 
-**Figure 13: Discovering the QR Code Image**
+<p align="center">
+  <img src="images/Figure-13.png" alt="Bluemoon Virtual Machine">
+</p>
+<p align="center">
+  <em><strong>Figure 13: Discovering the QR Code Image</strong></em>
+</p>
 
 ## 4.6 Extracting FTP Credentials from the QR Code
 
@@ -258,8 +332,12 @@ The `HOST=ip` value was a placeholder in the discovered script and needed to be 
 
 This discovery demonstrated that sensitive login information had been exposed through publicly accessible web content. It also provided the credentials required to investigate the FTP service in the next stage of the practical exercise.
 
-
-**Figure 14: Extracting FTP Credentials from the QR Code**
+<p align="center">
+  <img src="images/Figure-14.png" alt="Bluemoon Virtual Machine">
+</p>
+<p align="center">
+  <em><strong>Figure 14: Extracting FTP Credentials from the QR Code</strong></em>
+</p>
 
 
 # 5.0 Gaining Access to the Target Machine
@@ -282,7 +360,12 @@ The server returned the message `230 Login successful`, confirming that the cred
 
 The directory contents were then examined using the `ls -la` command. Two files, `information.txt` and `p_lists.txt`, were discovered. Both files were readable by the authenticated FTP user and were subsequently downloaded for further investigation.
 
-**Figure 15: Establishing a Connection to the FTP Server**
+<p align="center">
+  <img src="images/Figure-15.png" alt="Bluemoon Virtual Machine">
+</p>
+<p align="center">
+  <em><strong>Figure 15: Establishing a Connection to the FTP Server</strong></em>
+</p>
 
 ## 5.2 Downloading and Examining information.txt
 
@@ -310,7 +393,16 @@ This message provided an important clue about the target machine. It identified 
 
 The message suggested that the Robin account might be using a weak password that could be identified from the supplied password list.
 
-**Figure 16: Examining the Contents of information.txt**
+<p align="center">
+  <img src="images/Figure-16.png" alt="Bluemoon Virtual Machine">
+</p>
+<p align="center">
+  <p align="center">
+  <img src="images/Figure-16-ii.png" alt="Bluemoon Virtual Machine">
+</p>
+<p align="center">
+  <em><strong>Figure 16: Examining the Contents of information.txt</strong></em>
+</p>
 
 ## 5.3 Downloading and Examining p_lists.txt
 
@@ -332,7 +424,16 @@ One of the important findings was that the password list appeared to be intended
 
 Therefore, the password list was prepared for the next stage of the practical exercise using Hydra.
 
-**Figure 17: Examining the Contents of p_lists.txt**
+ <p align="center">
+  <img src="images/Figure-17.png" alt="Bluemoon Virtual Machine">
+</p>
+<p align="center">
+   <p align="center">
+  <img src="images/Figure-17-ii.png" alt="Bluemoon Virtual Machine">
+</p>
+<p align="center">
+  <em><strong>Figure 17: Examining the Contents of p_lists.txt</strong></em>
+</p>
 
 ## 5.4 Password Auditing Using Hydra
 
@@ -360,7 +461,13 @@ The following table explains the options used in the Hydra command:
 | `-f` | Stops after finding a valid credential pair. |
 | `ssh://` | Specifies SSH as the target service. |
 
-**Figure 18: Identifying Valid SSH Credentials Using Hydra**
+  <p align="center">
+  <img src="images/Figure-18.png" alt="Bluemoon Virtual Machine">
+</p>
+<p align="center">
+  <em><strong>Figure 18: Identifying Valid SSH Credentials Using Hydra</strong></em>
+</p>
+
 
 ## 5.5 Gaining SSH Access as Robin
 
@@ -386,7 +493,12 @@ This confirmed that the SSH session was active and that the user was operating w
 
 This step demonstrated that the credentials discovered through the password auditing process could be used to gain remote access to the target machine. The successful SSH connection also provided the starting point for the privilege escalation investigation in the next stage.
 
-**Figure 19: Successfully Gaining SSH Access to Bluemoon**
+  <p align="center">
+  <img src="images/Figure-19.png" alt="Bluemoon Virtual Machine">
+</p>
+<p align="center">
+  <em><strong>Figure 19: Successfully Gaining SSH Access to Bluemoon</strong></em>
+</p>
 
 
 # 6.0 Privilege Escalation
@@ -409,7 +521,12 @@ Finally, the `pwd` command was used to identify the current working directory. T
 
 Based on these results, it was confirmed that the initial SSH access was obtained using a normal user account rather than the root account.
 
-**Figure 20: Identifying the Current User and Group Information**
+  <p align="center">
+  <img src="images/Figure-20.png" alt="Bluemoon Virtual Machine">
+</p>
+<p align="center">
+  <em><strong>Figure 20: Identifying the Current User and Group Information</strong></em>
+</p>
 
 ## 6.2 Identifying Sudo Permissions
 
@@ -425,7 +542,13 @@ This permission was indicated by `(jerry) NOPASSWD` in the command output.
 
 The `NOPASSWD` option means that password authentication is not required when Robin executes this specific script through sudo. This finding was important because it revealed a potential privilege escalation opportunity, allowing Robin to execute the permitted script with Jerry's privileges instead of Robin's own privileges.
 
-**Figure 21: Identifying Sudo Permissions for the Robin Account**
+ <p align="center">
+  <img src="images/Figure-21.png" alt="Bluemoon Virtual Machine">
+</p>
+<p align="center">
+  <em><strong>Figure 21: Identifying Sudo Permissions for the Robin Account</strong></em>
+</p>
+
 
 ## 6.3 Inspecting the feedback.sh Script
 
@@ -455,7 +578,13 @@ This creates a security risk because Robin was permitted to execute the script a
 
 The combination of the insecure command execution statement and the sudo permission created a potential privilege escalation vulnerability.
 
-**Figure 22: Examining the Feedback Script and Its Permissions**
+ <p align="center">
+  <img src="images/Figure-22.png" alt="Bluemoon Virtual Machine">
+</p>
+<p align="center">
+  <em><strong>Figure 22: Examining the Feedback Script and Its Permissions</strong></em>
+</p>
+
 
 ## 6.4 Exploiting the Sudo Misconfiguration
 
@@ -481,7 +610,16 @@ This finding was significant because membership in the Docker group could provid
 
 The result confirmed successful privilege escalation from Robin to Jerry through the combination of the sudo misconfiguration and insecure command execution in the feedback script.
 
-**Figure 23: Successfully Escalating Privileges from Robin to Jerry**
+ <p align="center">
+  <img src="images/Figure-23.png" alt="Bluemoon Virtual Machine">
+</p>
+<p align="center">
+   <p align="center">
+  <img src="images/Figure-23-ii.png" alt="Bluemoon Virtual Machine">
+</p>
+<p align="center">
+  <em><strong>Figure 23: Successfully Escalating Privileges from Robin to Jerry</strong></em>
+</p>
 
 
 # 7.0 Docker-Based Privilege Escalation Investigation
@@ -506,7 +644,13 @@ The output displayed `/usr/bin/docker`, confirming that Docker was installed on 
 
 This finding indicated that Docker was available for further investigation. Since Jerry belonged to the Docker group, the next step was to examine the Docker permissions and identify whether the account could access the Docker daemon.
 
-**Figure 24: Checking Docker Availability and Permissions**
+  <p align="center">
+  <img src="images/Figure-24.png" alt="Bluemoon Virtual Machine">
+</p>
+<p align="center">
+  <em><strong>Figure 24: Checking Docker Availability and Permissions</strong></em>
+</p>
+
 
 ## 7.2 Investigating Docker Permissions
 
@@ -524,7 +668,12 @@ Since Robin was not a member of the Docker group, direct access to the Docker da
 
 Therefore, Docker commands could be executed using Jerry's privileges through the vulnerable `feedback.sh` script. This provided an opportunity to investigate the available Docker containers and their configurations further.
 
-**Figure 25: Investigating Existing Docker Container Permissions**
+  <p align="center">
+  <img src="images/Figure-25.png" alt="Bluemoon Virtual Machine">
+</p>
+<p align="center">
+  <em><strong>Figure 25: Investigating Existing Docker Container Permissions</strong></em>
+</p>
 
 ## 7.3 Listing Available Docker Containers
 
@@ -552,7 +701,12 @@ The container information is shown in the following table:
 | Container name | suspicious_lamport |
 | Status | Exited (0) |
 
-**Figure 26: Identifying Existing Docker Containers Using docker ps -a**
+  <p align="center">
+  <img src="images/Figure-26.png" alt="Bluemoon Virtual Machine">
+</p>
+<p align="center">
+  <em><strong>Figure 26: Identifying Existing Docker Containers Using docker ps -a</strong></em>
+</p>
 
 ## 7.4 Inspecting the Docker Container Configuration
 
@@ -570,7 +724,33 @@ This meant that the Alpine container could access and modify files within the Bl
 
 This was a serious security misconfiguration because it exposed the host filesystem to the container. If an attacker gained access to the container with sufficient privileges, the mounted directory could be used to access sensitive files belonging to the host machine.
 
-**Figure 27: Inspecting the Existing Docker Container Configuration**
+ <p align="center">
+  <img src="images/Figure-23.png" alt="Bluemoon Virtual Machine">
+</p>
+<p align="center">
+  <p align="center">
+  <img src="images/Figure-27.png" alt="Bluemoon Virtual Machine">
+</p>
+ <p align="center">
+  <img src="images/Figure-27-ii.png" alt="Bluemoon Virtual Machine">
+</p>
+<p align="center">
+  <p align="center">
+  <img src="images/Figure-27-iii.png" alt="Bluemoon Virtual Machine">
+</p>
+<p align="center">
+  <p align="center">
+  <p align="center">
+  <img src="images/Figure-27-iv.png" alt="Bluemoon Virtual Machine">
+</p>
+<p align="center">
+  <p align="center">
+  <img src="images/Figure-27-v.png" alt="Bluemoon Virtual Machine">
+</p>
+<p align="center">
+  <em><strong>Figure 27: Inspecting the Existing Docker Container Configuration</strong></em>
+</p>
+
 
 ## 7.5 Accessing the Existing Docker Container
 
@@ -594,7 +774,18 @@ The output showed `uid=0(root)`, confirming that root privileges were available 
 
 Although this did not provide a direct root shell on the Debian host, the container's root privileges combined with the read-write bind mount created a way to access the host filesystem.
 
-**Figure 28: Accessing the Existing Alpine Docker Container**
+
+ <p align="center">
+  <img src="images/Figure-23.png" alt="Bluemoon Virtual Machine">
+</p>
+<p align="center">
+  <p align="center">
+  <img src="images/Figure-28.png" alt="Bluemoon Virtual Machine">
+</p>
+<p align="center">
+  <em><strong>Figure 28: Accessing the Existing Alpine Docker Container</strong></em>
+</p>
+
 
 ## 7.6 Verifying Access to the Host Filesystem
 
@@ -626,7 +817,12 @@ These results confirmed that the Alpine container had access to the actual Bluem
 
 Although root access was confirmed inside the Alpine container rather than through a direct root login to Debian, the read-write bind mount exposed the host filesystem and created a serious privilege escalation risk.
 
-**Figure 29: Verifying Root Privileges Inside the Alpine Container and Access to the Host Filesystem**
+  <p align="center">
+  <img src="images/Figure-29.png" alt="Bluemoon Virtual Machine">
+</p>
+<p align="center">
+  <em><strong>Figure 29: Verifying Root Privileges Inside the Alpine Container and Access to the Host Filesystem</strong></em>
+</p>
 
 ## 7.7 Retrieving the User-2 Flag
 
@@ -656,9 +852,27 @@ The output displayed the message `You Found User-2 Flag` together with the User-
 
 This confirmed that the User-2 Flag was successfully retrieved from Jerry's home directory through the mounted host filesystem. It also demonstrated that the container's access to the host filesystem allowed files belonging to other host users to be accessed.
 
-**Figure 30: Verifying Access to the Bluemoon Host Filesystem**
+  <p align="center">
+  <img src="images/Figure-30.png" alt="Bluemoon Virtual Machine">
+</p>
+<p align="center">
+  <em><strong>Figure 30: Verifying Access to the Bluemoon Host Filesystem</strong></em>
+</p>
 
-**Figure 31: Successfully Retrieving the User-2 Flag**
+  <p align="center">
+  <img src="images/Figure-31.png" alt="Bluemoon Virtual Machine">
+</p>
+<p align="center">
+    <p align="center">
+  <img src="images/Figure-31-ii.png" alt="Bluemoon Virtual Machine">
+</p>
+<p align="center">
+  <p align="center">
+  <img src="images/Figure-31-iii.png" alt="Bluemoon Virtual Machine">
+</p>
+<p align="center">
+  <em><strong>Figure 31: Successfully Retrieving the User-2 Flag</strong></em>
+</p>
 
 ## 7.8 Retrieving the Root Flag
 
@@ -684,7 +898,12 @@ This confirmed that the Root Flag was successfully retrieved through the Docker 
 
 The finding demonstrated the security risk of allowing an accessible Docker container to mount the host's entire root filesystem with read and write permissions. Although a direct root shell on the Debian host was not obtained, the configuration allowed access to sensitive files within the host filesystem, including the Root Flag.
 
-**Figure 32: Successfully Retrieving the Bluemoon Root Flag**
+  <p align="center">
+  <img src="images/Figure-32.png" alt="Bluemoon Virtual Machine">
+</p>
+<p align="center">
+  <em><strong>Figure 32: Successfully Retrieving the Bluemoon Root Flag</strong></em>
+</p>
 
 ## 8.0 Maintaining Access
 
@@ -692,7 +911,12 @@ Maintaining access refers to techniques that allow an attacker to retain access 
 
 The `whoami` and `hostname` commands were executed to verify the authenticated user and target machine. The results confirmed that remote access was still possible using the Robin account. This demonstrated that the compromised account could be accessed again through SSH.
 
-Figure 33 : Verifying the Existing SSH Access to Bluemoon
+  <p align="center">
+  <img src="images/Figure-33.png" alt="Bluemoon Virtual Machine">
+</p>
+<p align="center">
+  <em><strong>Figure 33 : Verifying the Existing SSH Access to Bluemoon</strong></em>
+</p>
 
 ## 10.0 Conclusion
 
